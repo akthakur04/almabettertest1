@@ -26,7 +26,7 @@ SECRET_KEY = '07-mw5t=#x3@+jjg4q%qky(#mn8!z(s9z@xh40^4e!!to(+%r6'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+SESSION_COOKIE_DOMAIN = 'almabettertest.herokuapp.com'
 
 # Application definition
 
@@ -82,6 +82,8 @@ DATABASES = {
         'NAME': 'ALMB',
         'USER': 'postgres',
         'PASSWORD':'ROOT',
+        'HOST':'localhost',
+        'PORT':' 5432',
         
     }
 }
@@ -130,3 +132,6 @@ STATIC_ROOT=os.path.join(BASE_DIR,'ASSETS')
 
 MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media/')
+import dj_database_url
+
+DATABASES['default'] = dj_database_url.config(default='postgres://...')
