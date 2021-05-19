@@ -82,7 +82,8 @@ DATABASES = {
         'NAME': 'ALMB',
         'USER': 'postgres',
         'PASSWORD':'ROOT',
-        'HOST':'localhost'
+        'HOST':'localhost',
+        'PORT': '5432',
     }
 }
 
