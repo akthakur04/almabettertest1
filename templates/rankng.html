@@ -1,0 +1,116 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>LeaderBoard | AlmaBetter</title>
+    <link rel="shortcut icon" href="{% static 'assets/images/fav.png' %}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'assets/images/fav.jpg' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/slider/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/slider/css/owl.theme.default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/table1.css' %}" />
+</head>
+
+<body>
+
+
+
+  <div class="col-lg-3 col-md-12 logo">
+                        <a href="/">
+                        <img src="{% static 'assets/images/IKsWBsZXSpSGIaIKs5mi_LogoNoBG_png (1).png' %}" alt="">
+                        </a>
+                    </div>
+    <center><h1>Leader Board</h1><br></center>
+<div class="container"><center>
+      <section><form role="form" action="/sortnsearch" method="get">
+  <input name="qu" type="text" placeholder="Search name..." style="  background:border:0;padding:5px 25px;">
+     <button type="submit" class=" btn btn-success"  style="  background: #44c2fd;border: 0;padding: 7px 25px;color: #fff;transition: 0.4s;">search</button> &nbsp;&nbsp;
+    <select id="sorting" name="q" style="  background:border:0;padding:5px 25px;">
+          <option value="name" name="name">Name - (Low - High)</option>
+          <option value="roll" name="roll">Roll - (Low - High)</option>
+          <option value="math" name="math">Math - (Low - High)</option>
+          <option value="phy"  name="phy">Phy - (Low - High)</option>
+          <option value="chem" name="chem">Chem - (Low - High)</option>
+          <option value="total" name="total">Total - (Low - High)</option>
+          <option value="percentage" name="percentage">Percentage - (Low - High)</option>
+          <option value="-name" name="name">Name - (High - Low)</option>
+          <option value="-roll" name="roll">Roll - (High - Low)</option>
+          <option value="-math" name="math">Math - (High - Low)</option>
+          <option value="-phy"  name="phy">Phy - (High - Low)</option>
+          <option value="-chem" name="chem">Chem - (High - Low)</option>
+          <option value="-total" name="total">Total - (High - Low)</option>
+          <option value="-percentage" name="percentage" selected HIDDEN>Percentage - (High - Low)</option>
+    </select>
+   <button type="submit" class=" btn btn-success"  style="  background: #44c2fd;border: 0;padding: 7px 25px;color: #fff;transition: 0.4s;">sort</button>
+
+      </form></section></center></div>
+<br>
+<br>
+
+
+<center>
+       <section style="">
+<table class="rtable" >
+  <thead>
+    <tr>
+        <th>Name</th>
+        <th>roll nu</th>
+        <th>mATH</th>
+        <th>pHY</th>
+        <th>cHEM</th>
+        <th>tOTAL</th>
+        <th>pERCENTAGE</th>
+    </tr>
+  </thead>
+{% for data in alldta %}
+    <tr>
+        <td>{{data.name}}</td>
+        <td>{{data.roll}}</td>
+        <td>{{data.math}}</td>
+        <td>{{data.phy}}</td>
+        <td>{{data.chem}}</td>
+        <td>{{data.total}}</td>
+        <td>{{data.percentage}}</td>
+    </tr>
+{% endfor %}
+    {% for data in object_list %}
+    <tr>
+        <td>{{data.name}}</td>
+        <td>{{data.roll}}</td>
+        <td>{{data.math}}</td>
+        <td>{{data.phy}}</td>
+        <td>{{data.chem}}</td>
+        <td>{{data.total}}</td>
+        <td>{{data.percentage}}</td>
+    </tr>
+{% endfor %}
+{% for dat in obj %}
+    <tr>
+        <td>{{dat.name}}</td>
+        <td>{{dat.roll}}</td>
+        <td>{{dat.math}}</td>
+        <td>{{dat.phy}}</td>
+        <td>{{dat.chem}}</td>
+        <td>{{dat.total}}</td>
+        <td>{{dat.percentage}}</td>
+    </tr>
+{% endfor %}
+
+</table></section>
+    <center><section><h3> want to enter more records?</h3><a href="/marks"><button type="submit" class=" btn btn-success"  style="  background: #44c2fd;border: 0;padding: 7px 25px;color: #fff;transition: 0.4s;">Enter Marks</button></a> </section></center></center>
+</body>
+
+    <script src="{% static 'assets/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/slider/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js' %}"></script>
+    <script src="{% static 'assets/js/script.js' %}"></script>
+</html>
+
